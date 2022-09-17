@@ -1,0 +1,12 @@
+#!/bin/sh
+cmake -DCMAKE_INSTALL_PREFIX=/usr \
+  -DCMAKE_VERBOSE_MAKEFILE=TRUE \
+  -DCMAKE_SKIP_RPATH=1 \
+  -Dsleigh_RELEASE_TYPE=HEAD \
+  -DFETCHCONTENT_SOURCE_DIR_GHIDRASOURCE=/abuild/projects/Ghidra/ghidra \
+  -B build \
+  -S .
+
+cmake \
+  --build build \
+  --parallel 8
